@@ -1,0 +1,24 @@
+
+<div class="container">
+
+        <div class="partie1">
+            <h1 class="titre">Liste des suspects</h1>
+            <button mat-icon-button class="boutonAjouter" routerLink="/ajoutSuspect"><mat-icon class="iconAdd">add_circle</mat-icon></button>
+        </div>
+    
+        <div class="partie2">
+               
+                <button class="boutonListe" 
+                    *ngFor="let suspect of suspects" 
+                    [routerLink]="['/suspect', suspect.id]" 
+                    (click)="afficherId()">
+
+                    <!-- <p>{{suspect.pseudo | json}}</p> -->
+                    <p class="pseudo" fxHide.xs >{{suspect.pseudo}}</p>
+                    <img class="image" src="{{suspect.photo}}" />
+
+                </button>
+
+        </div>
+    </div> 
+

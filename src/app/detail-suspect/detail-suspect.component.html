@@ -1,0 +1,35 @@
+
+<div  *ngIf="suspect" class="container">
+    <form #formUpdate (ngSubmit)="updateSuspect(formUpdate)"> 
+      <div class="ligne1">
+          <h1 class="titre">Détail du suspect</h1>
+      </div>   
+      <div class="ligne2" >
+       
+          <div class="gauche"  fxLayout.xs="row">
+              <input class="pseudo" type="text" placeholder="{{suspect.pseudo}}" [(ngModel)]="suspect.pseudo" [ngModelOptions]="{standalone: true}">  
+              <input class="signe" type="text" placeholder="{{suspect.signe_particulier}}"  [(ngModel)]="suspect.signe_particulier" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div class="droite"  fxLayout.xs="row">
+              <input class="photo" type="text" placeholder="{{suspect.photo}}"  [(ngModel)]="suspect.photo" [ngModelOptions]="{standalone: true}">
+              <input class="couleurP" type="text" placeholder="{{suspect.couleur_peau}}"  [(ngModel)]="suspect.couleur_peau" [ngModelOptions]="{standalone: true}">
+              <input class="couleurC" type="text" placeholder="{{suspect.couleur_cheveux}}"  [(ngModel)]="suspect.couleur_cheveux" [ngModelOptions]="{standalone: true}">
+              <input class="taille" type="text" placeholder="{{suspect.taille}}"  [(ngModel)]="suspect.taille" [ngModelOptions]="{standalone: true}">
+          </div>
+        
+      </div>
+      <div class="ligne3">
+          <button  class="boutonRetour" type="" routerLink="/suspects">Retour</button>
+          <button class="iconSide" type="submit">edit</button>
+          <mat-icon class="iconSide" (click)="deleteSuspect()">delete</mat-icon>
+      </div>
+  
+    </form>
+  </div> 
+
+
+
+
+
+
+

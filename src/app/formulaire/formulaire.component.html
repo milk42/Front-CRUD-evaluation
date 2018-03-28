@@ -1,0 +1,66 @@
+<mat-icon class="iconClear" routerLink="/suspects">clear</mat-icon>
+
+<div class="container">
+
+  <form #suspectForm (ngSubmit)="onSubmit(suspectForm)" >
+    <div class="ligne1">
+      <h1 class="titre">Ajout d'un suspect</h1>
+    </div>   
+    <div class="ligne2">
+ 
+       <!--pseudo-->
+       <mat-form-field class="input1">
+          <input matInput type="text" name="pseudo" placeholder="pseudo" [(ngModel)]="suspect.pseudo"> 
+         <input matInput >
+       </mat-form-field>
+        <!--photo-->
+        <mat-form-field class="input2">
+            <input matInput type="text" name="photo" placeholder="photo" [(ngModel)]="suspect.photo">
+           <input matInput >
+         </mat-form-field>
+          <!--signes particulier-->
+        <mat-form-field class="input3">
+            <textarea matInput type="text" name="signeParticulier" placeholder="signes particuliers" 
+          matTextareaAutosize matAutosizeMinRows="2"matAutosizeMaxRows="5" [(ngModel)]="suspect.signeParticulier"></textarea>
+         </mat-form-field>
+    </div>
+   
+    <div class="ligne3">
+       <!--couleur peau-->
+       <mat-form-field class="input4">
+          <mat-select placeholder="choisissez la couleur">
+              <mat-option *ngFor="let cp of couleursp" [value]="cp.value" [(ngModel)]="cp.viewValue">
+                {{ cp.viewValue }}
+              </mat-option>
+            </mat-select>
+       </mat-form-field>
+        <!--couleur cheveux-->
+        <mat-form-field class="input4">
+            <mat-select placeholder="choisissez la couleur">
+                <mat-option *ngFor="let c of couleurs" [value]="c.value" [(ngModel)]="suspect.c">
+                  {{ c.viewValue }}
+                </mat-option>
+              </mat-select>
+         </mat-form-field>
+          <!--taille-->
+        <mat-form-field class="input6">
+            <input matInput type="text" name="pseudo" placeholder="taille" [(ngModel)]="suspect.taille"> 
+           <input matInput >
+         </mat-form-field>
+    </div>
+
+    <div class="ligne4">
+    
+      <button  class="boutonAnnuler" type="submit">Annuler</button>
+      <button  class="boutonSubmit" type="submit">Soumettre</button>
+    </div>
+
+    
+
+  </form>
+</div> 
+
+
+
+
+
